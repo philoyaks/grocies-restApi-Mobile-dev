@@ -24,8 +24,7 @@ namespace project.Controllers;
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         
         {
-            // System.Diagnostics.Debug.WriteLine(_context.Category.First().Image);
-            // return await _context.Category.Include(c=>c.Product).ToListAsync();
+            
             return await _context.Category.ToListAsync();
         }
 

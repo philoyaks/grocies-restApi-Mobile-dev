@@ -11,7 +11,6 @@ using project.Services;
 
 namespace project.Controllers;
     [Route("api")]
-
     [ApiController]
     [Authorize]
     public class AccountsController : ControllerBase

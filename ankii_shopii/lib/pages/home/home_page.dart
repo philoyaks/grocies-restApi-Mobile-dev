@@ -169,7 +169,8 @@ class _HomePageState extends State<HomePage> {
                 color: FOREGROUND_COLOR,
                 image: DecorationImage(
                     image: CachedNetworkImageProvider(
-                        "https://www.arcgis.com/sharing/rest/content/items/8f762395cd204552bb958ecb1b54339d/resources/1588745514029.jpeg?w=2932"),
+                        // "https://www.arcgis.com/sharing/rest/content/items/8f762395cd204552bb958ecb1b54339d/resources/1588745514029.jpeg?w=2932"
+                        "https://smartpreneur.ng/wp-content/uploads/2020/04/how-to-make-an-online-store-768x459.jpg"),
                     fit: BoxFit.cover)),
           ),
           Positioned.fill(
@@ -271,9 +272,9 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ))
                               .toList()
-                                ..add(SizedBox(
-                                  width: 10,
-                                ))))
+                            ..add(SizedBox(
+                              width: 10,
+                            ))))
                 ],
               ),
             );

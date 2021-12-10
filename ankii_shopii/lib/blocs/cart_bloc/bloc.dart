@@ -31,54 +31,54 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   }
 
   Stream<CartState> mapLoadCartEventToState(LoadCart event) async* {
-    // var rs = await CartService().getCurrentCart();
-    var rs = [
-      OrderingModel(
-        createdDate: "2-3-45",
-        deliveryId: 2,
-        id: 1,
-        shopUsername: "thsdnsdjdnsd",
-        status: 2,
-        username: "efdnflj",
-        delivery: DeliveryAddressModel(
-          address: 'ssfjnsj',
-          fullname: "sduodsldhfon",
-          id: 1,
-          phoneNumber: "8313013031",
-          username: "sjsffs",
-        ),
-      ),
-      OrderingModel(
-        createdDate: "2-3-45",
-        deliveryId: 2,
-        id: 1,
-        shopUsername: "thsdnsdjdnsd",
-        status: 2,
-        username: "efdnflj",
-        delivery: DeliveryAddressModel(
-          address: 'ssfjnsj',
-          fullname: "sduodsldhfon",
-          id: 1,
-          phoneNumber: "8313013031",
-          username: "sjsffs",
-        ),
-      ),
-      OrderingModel(
-        createdDate: "2-3-45",
-        deliveryId: 2,
-        id: 1,
-        shopUsername: "thsdnsdjdnsd",
-        status: 2,
-        username: "efdnflj",
-        delivery: DeliveryAddressModel(
-          address: 'ssfjnsj',
-          fullname: "sduodsldhfon",
-          id: 1,
-          phoneNumber: "8313013031",
-          username: "sjsffs",
-        ),
-      ),
-    ];
+    var rs = await CartService().getCurrentCart();
+    // var rs = [
+    //   OrderingModel(
+    //     createdDate: "2-3-45",
+    //     deliveryId: 2,
+    //     id: 1,
+    //     shopUsername: "thsdnsdjdnsd",
+    //     status: 2,
+    //     username: "efdnflj",
+    //     delivery: DeliveryAddressModel(
+    //       address: 'ssfjnsj',
+    //       fullname: "sduodsldhfon",
+    //       id: 1,
+    //       phoneNumber: "8313013031",
+    //       username: "sjsffs",
+    //     ),
+    //   ),
+    //   OrderingModel(
+    //     createdDate: "2-3-45",
+    //     deliveryId: 2,
+    //     id: 1,
+    //     shopUsername: "thsdnsdjdnsd",
+    //     status: 2,
+    //     username: "efdnflj",
+    //     delivery: DeliveryAddressModel(
+    //       address: 'ssfjnsj',
+    //       fullname: "sduodsldhfon",
+    //       id: 1,
+    //       phoneNumber: "8313013031",
+    //       username: "sjsffs",
+    //     ),
+    //   ),
+    //   OrderingModel(
+    //     createdDate: "2-3-45",
+    //     deliveryId: 2,
+    //     id: 1,
+    //     shopUsername: "thsdnsdjdnsd",
+    //     status: 2,
+    //     username: "efdnflj",
+    //     delivery: DeliveryAddressModel(
+    //       address: 'ssfjnsj',
+    //       fullname: "sduodsldhfon",
+    //       id: 1,
+    //       phoneNumber: "8313013031",
+    //       username: "sjsffs",
+    //     ),
+    //   ),
+    // ];
     if (rs != null) {
       yield CartLoaded(rs);
     } else {

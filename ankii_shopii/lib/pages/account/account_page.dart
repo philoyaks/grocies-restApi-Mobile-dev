@@ -90,7 +90,7 @@ class _AccountPageState extends State<AccountPage> {
             height: 5,
           ),
           Text(
-            accountModel.fullname ?? 'Lê Nguyên Khoa',
+            accountModel.fullname ?? 'Oyaks',
             style: TEXT_STYLE_ON_FOREGROUND.copyWith(
                 fontWeight: FontWeight.bold, fontSize: 20),
           )

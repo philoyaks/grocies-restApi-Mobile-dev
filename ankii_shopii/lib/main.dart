@@ -19,6 +19,7 @@ import 'pages/navigator/navigator_page.dart';
 BuildContext mainContext;
 main() {
   WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
   runApp(MyApp());
 }
 
@@ -28,11 +29,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MultiBlocProvider(
         providers: [
-          BlocProvider<CartBloc>(create: (context) => CartBloc()..add(LoadCart())),
-          BlocProvider<LoginBloc>(create: (context) => LoginBloc()..add(GetCurrentLogin())),
+          BlocProvider<CartBloc>(
+              create: (context) => CartBloc()..add(LoadCart())),
+          BlocProvider<LoginBloc>(
+              create: (context) => LoginBloc()..add(GetCurrentLogin())),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -103,5 +107,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
       print('Not Logged In!');
     }
     return true;
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
